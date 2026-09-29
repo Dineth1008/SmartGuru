@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="100"
+    android:viewportHeight="100">
+
+    <!-- Cap Top Diamond (Mortarboard) -->
+    <path
+        android:fillColor="#1B365D"
+        android:pathData="M 50,22 L 92,38 L 50,54 L 8,38 Z" />
+
+    <!-- Cap Skullcap Base -->
+    <path
+        android:fillColor="#1B365D"
+        android:pathData="M 28,47.5 L 28,64 C 28,73 72,73 72,64 L 72,47.5 L 50,56 Z" />
+
+    <!-- Tassel Center Button -->
+    <path
+        android:fillColor="#F37321"
+        android:pathData="M 50,36 C 51.5,36 52.7,37.2 52.7,38.7 C 52.7,40.2 51.5,41.4 50,41.4 C 48.5,41.4 47.3,40.2 47.3,38.7 C 47.3,37.2 48.5,36 50,36 Z" />
+
+    <!-- Tassel Cord -->
+    <path
+        android:fillColor="#F37321"
+        android:pathData="M 50,38.7 C 45,41 41,45 40,51 L 42.5,51.8 C 43.3,46.5 46.5,43 50,40.5 Z" />
+
+    <!-- Tassel Ring Clip -->
+    <path
+        android:fillColor="#1B365D"
+        android:pathData="M 39.5,50 C 40.8,50 42,51.2 42,52.5 C 42,53.8 40.8,55 39.5,55 C 38.2,55 37,53.8 37,52.5 C 37,51.2 38.2,50 39.5,50 Z" />
+
+    <!-- Tassel Fringe Hanging Down -->
+    <path
+        android:fillColor="#F37321"
+        android:pathData="M 38,53 L 42.5,54 L 39.5,67 L 36.5,66 Z" />
+
+</vector>
