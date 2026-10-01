@@ -28,6 +28,11 @@
 
         <activity
             android:name=".DashboardActivity"
+                        android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".AttendanceActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
 

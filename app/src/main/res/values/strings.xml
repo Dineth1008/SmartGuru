@@ -38,4 +38,13 @@
     <string name="announcement_title">Announcements</string>
     <string name="announcement_preview">Welcome Students! Course materials and updates available&#8230;</string>
     <string name="announcement_time">14 days ago</string>
+    <string name="title_attendance">Attendance</string>
+    <string name="calendar_header">Calendar 2024</string>
+    <string name="tab_present">Present</string>
+    <string name="tab_absent">Absent</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="class_1">Classes 1</string>
+    <string name="class_2">Classes 2</string>
+    <string name="class_3">Classes 3</string>
+    <string name="class_4">Classes 4</string>
 </resources>

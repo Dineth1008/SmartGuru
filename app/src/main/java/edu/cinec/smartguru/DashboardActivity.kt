@@ -1,5 +1,6 @@
 package edu.cinec.smartguru
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.Toast
@@ -13,7 +14,8 @@ class DashboardActivity : AppCompatActivity() {
 
         // Quick Actions Click Listeners
         findViewById<LinearLayout>(R.id.btnAttendance)?.setOnClickListener {
-            Toast.makeText(this, "Attendance clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AttendanceActivity::class.java)
+            startActivity(intent)
         }
 
         findViewById<LinearLayout>(R.id.btnPayments)?.setOnClickListener {
