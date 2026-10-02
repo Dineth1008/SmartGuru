@@ -50,79 +50,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
             android:text="@string/welcome_back"
             android:textColor="@color/smart_blue"
             android:textSize="22sp"
             android:textStyle="bold" />
-
-        <!-- 3 Users Access Role Selector Label -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/select_role"
-            android:textColor="#667085"
-            android:textSize="12sp" />
-
-        <!-- 3 Users Access Role Buttons (Student, Teacher, Admin) -->
-        <LinearLayout
-            android:id="@+id/layoutRoleSelector"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <!-- Student Role Button -->
-            <TextView
-                android:id="@+id/btnRoleStudent"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_role_selected"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="@string/role_student"
-                android:textColor="#FFFFFF"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <!-- Teacher Role Button -->
-            <TextView
-                android:id="@+id/btnRoleTeacher"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginHorizontal="3dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_role_unselected"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="@string/role_teacher"
-                android:textColor="#344054"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-
-            <!-- Admin Role Button -->
-            <TextView
-                android:id="@+id/btnRoleAdmin"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="6dp"
-                android:layout_weight="1"
-                android:background="@drawable/bg_role_unselected"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="@string/role_admin"
-                android:textColor="#344054"
-                android:textSize="13sp"
-                android:textStyle="bold" />
-        </LinearLayout>
 
         <!-- Email Field -->
         <EditText

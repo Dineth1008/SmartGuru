@@ -19,7 +19,8 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.btnPayments)?.setOnClickListener {
-            Toast.makeText(this, "Payments clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, PaymentActivity::class.java)
+            startActivity(intent)
         }
 
         findViewById<LinearLayout>(R.id.btnQuizzes)?.setOnClickListener {
