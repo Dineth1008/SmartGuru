@@ -2,6 +2,7 @@ package edu.cinec.smartguru
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,18 @@ class DashboardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+
+        // Header Notification Bell Click
+        findViewById<FrameLayout>(R.id.btnNotification)?.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        // Bottom Nav Notification Bell Click
+        findViewById<LinearLayout>(R.id.navBell)?.setOnClickListener {
+            val intent = Intent(this, NotificationActivity::class.java)
+            startActivity(intent)
+        }
 
         // Quick Actions Click Listeners
         findViewById<LinearLayout>(R.id.btnAttendance)?.setOnClickListener {
@@ -28,7 +41,8 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         findViewById<LinearLayout>(R.id.btnResources)?.setOnClickListener {
-            Toast.makeText(this, "Resources clicked", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ResourceActivity::class.java)
+            startActivity(intent)
         }
     }
 }
