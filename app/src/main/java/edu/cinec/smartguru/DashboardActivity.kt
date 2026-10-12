@@ -2,47 +2,48 @@ package edu.cinec.smartguru
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.FrameLayout
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class DashboardActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
 
-        // Header Notification Bell Click
+        // Header and Bottom Nav Notification Bell Click
         findViewById<FrameLayout>(R.id.btnNotification)?.setOnClickListener {
-            val intent = Intent(this, NotificationActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
-
-        // Bottom Nav Notification Bell Click
         findViewById<LinearLayout>(R.id.navBell)?.setOnClickListener {
-            val intent = Intent(this, NotificationActivity::class.java)
-            startActivity(intent)
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
 
-        // Quick Actions Click Listeners
-        findViewById<LinearLayout>(R.id.btnAttendance)?.setOnClickListener {
-            val intent = Intent(this, AttendanceActivity::class.java)
-            startActivity(intent)
+        // Find 4 Quick Action cards from XML
+        val cardQuiz = findViewById<View>(R.id.cardQuiz)
+        val cardAttendance = findViewById<View>(R.id.cardAttendance)
+        val cardPayment = findViewById<View>(R.id.cardPayment)
+        val cardResource = findViewById<View>(R.id.cardResource)
+
+        // 1. When MCQ (Quiz) card is clicked
+        cardQuiz?.setOnClickListener {
+            startActivity(Intent(this, QuizActivity::class.java))
         }
 
-        findViewById<LinearLayout>(R.id.btnPayments)?.setOnClickListener {
-            val intent = Intent(this, PaymentActivity::class.java)
-            startActivity(intent)
+        // 2. When Attendance card is clicked
+        cardAttendance?.setOnClickListener {
+            startActivity(Intent(this, AttendanceActivity::class.java))
         }
 
-        findViewById<LinearLayout>(R.id.btnQuizzes)?.setOnClickListener {
-            Toast.makeText(this, "Quizzes clicked", Toast.LENGTH_SHORT).show()
+        // 3. When Payment card is clicked
+        cardPayment?.setOnClickListener {
+            startActivity(Intent(this, PaymentActivity::class.java))
         }
 
-        findViewById<LinearLayout>(R.id.btnResources)?.setOnClickListener {
-            val intent = Intent(this, ResourceActivity::class.java)
-            startActivity(intent)
+        // 4. When Resources card is clicked
+        cardResource?.setOnClickListener {
+            startActivity(Intent(this, ResourceActivity::class.java))
         }
     }
 }

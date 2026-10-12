@@ -284,6 +284,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/cardAttendance"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="@drawable/bg_role_unselected"
@@ -319,6 +320,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/cardPayment"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="@drawable/bg_role_unselected"
@@ -354,6 +356,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/cardQuiz"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="@drawable/bg_role_unselected"
@@ -389,6 +392,7 @@
                         android:orientation="vertical">
 
                         <LinearLayout
+                            android:id="@+id/cardResource"
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:background="@drawable/bg_role_unselected"
