@@ -4,12 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
@@ -17,29 +14,20 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var tvForgotPassword: TextView
-    private lateinit var btnGoogleSignIn: LinearLayout
-    private lateinit var btnMicrosoftSignIn: LinearLayout
     private lateinit var tvSignUp: TextView
 
-    private var auth: FirebaseAuth? = null
+    private lateinit var dbHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        try {
-            FirebaseApp.initializeApp(this)
-            auth = FirebaseAuth.getInstance()
-        } catch (_: Exception) {
-            // Firebase configuration not yet complete
-        }
+        dbHelper = DatabaseHelper(this)
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
-        btnGoogleSignIn = findViewById(R.id.btnGoogleSignIn)
-        btnMicrosoftSignIn = findViewById(R.id.btnMicrosoftSignIn)
         tvSignUp = findViewById(R.id.tvSignUp)
 
         btnLogin.setOnClickListener {
@@ -55,37 +43,18 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            Toast.makeText(this, "Logging in...", Toast.LENGTH_SHORT).show()
-
-            val firebaseAuth = auth
-            if (firebaseAuth != null) {
-                firebaseAuth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this, DashboardActivity::class.java))
-                            finish()
-                        } else {
-                            Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
-                        }
-                    }
-            } else {
-                // Navigate to Dashboard Activity
+            val isValidUser = dbHelper.checkUser(email, password)
+            if (isValidUser) {
+                Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this, DashboardActivity::class.java))
                 finish()
+            } else {
+                Toast.makeText(this, "Invalid Email or Password!", Toast.LENGTH_LONG).show()
             }
         }
 
         tvForgotPassword.setOnClickListener {
             Toast.makeText(this, "Forgot Password clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        btnGoogleSignIn.setOnClickListener {
-            Toast.makeText(this, "Google Sign In clicked", Toast.LENGTH_SHORT).show()
-        }
-
-        btnMicrosoftSignIn.setOnClickListener {
-            Toast.makeText(this, "Microsoft Sign In clicked", Toast.LENGTH_SHORT).show()
         }
 
         tvSignUp.setOnClickListener {

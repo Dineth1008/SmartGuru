@@ -97,10 +97,13 @@
                                 android:layout_height="20dp"
                                 android:layout_alignParentStart="true"
                                 android:layout_centerVertical="true"
+                                android:clickable="true"
                                 android:contentDescription="Previous Month"
+                                android:focusable="true"
                                 android:src="@drawable/ic_chevron_left" />
 
                             <TextView
+                                android:id="@+id/tvCalendarHeader"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
@@ -115,7 +118,9 @@
                                 android:layout_height="20dp"
                                 android:layout_alignParentEnd="true"
                                 android:layout_centerVertical="true"
+                                android:clickable="true"
                                 android:contentDescription="Next Month"
+                                android:focusable="true"
                                 android:src="@drawable/ic_chevron_right" />
 
                         </RelativeLayout>
@@ -186,6 +191,7 @@
                                 android:layout_height="match_parent"
                                 android:layout_weight="1">
                                 <TextView
+                                    android:id="@+id/tvDay16"
                                     android:layout_width="32dp"
                                     android:layout_height="32dp"
                                     android:layout_gravity="center"
@@ -258,6 +264,7 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/tvTabPresent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/tab_present"
@@ -277,10 +284,11 @@
                         android:gravity="center">
 
                         <TextView
+                            android:id="@+id/tvTabAbsent"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/tab_absent"
-                            android:textColor="#D92D20"
+                            android:textColor="#667085"
                             android:textSize="15sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -302,6 +310,7 @@
 
                         <!-- Item 1: Classes 1 (Present) -->
                         <RelativeLayout
+                            android:id="@+id/itemClass1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="16dp">
@@ -377,10 +386,15 @@
                             </LinearLayout>
                         </RelativeLayout>
 
-                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" />
+                        <View
+                            android:id="@+id/divider1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F2F4F7" />
 
                         <!-- Item 2: Classes 2 (Present) -->
                         <RelativeLayout
+                            android:id="@+id/itemClass2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="16dp">
@@ -456,10 +470,15 @@
                             </LinearLayout>
                         </RelativeLayout>
 
-                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" />
+                        <View
+                            android:id="@+id/divider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F2F4F7" />
 
                         <!-- Item 3: Classes 3 (Absent) -->
                         <RelativeLayout
+                            android:id="@+id/itemClass3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="16dp">
@@ -503,7 +522,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
-                                    android:text="@string/tab_present"
+                                    android:text="@string/tab_absent"
                                     android:textColor="#667085"
                                     android:textSize="12sp" />
                             </LinearLayout>
@@ -535,10 +554,15 @@
                             </LinearLayout>
                         </RelativeLayout>
 
-                        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F4F7" />
+                        <View
+                            android:id="@+id/divider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F2F4F7" />
 
                         <!-- Item 4: Classes 4 (Absent) -->
                         <RelativeLayout
+                            android:id="@+id/itemClass4"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="16dp">
@@ -582,7 +606,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="2dp"
-                                    android:text="@string/tab_present"
+                                    android:text="@string/tab_absent"
                                     android:textColor="#667085"
                                     android:textSize="12sp" />
                             </LinearLayout>

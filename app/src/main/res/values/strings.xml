@@ -39,7 +39,7 @@
     <string name="announcement_preview">Welcome Students! Course materials and updates available&#8230;</string>
     <string name="announcement_time">14 days ago</string>
     <string name="title_attendance">Attendance</string>
-    <string name="calendar_header">Calendar 2024</string>
+    <string name="calendar_header">Calendar 2026</string>
     <string name="tab_present">Present</string>
     <string name="tab_absent">Absent</string>
     <string name="scan_qr">Scan QR</string>
@@ -86,4 +86,5 @@
     <string name="lesson_6">Lesson 6</string>
     <string name="create_account">Create Account</string>
     <string name="btn_signup_caps">SIGN UP</string>
+    <string name="already_have_account">Already have an account?</string>
 </resources>
