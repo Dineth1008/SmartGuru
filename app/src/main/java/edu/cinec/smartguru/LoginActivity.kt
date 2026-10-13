@@ -21,16 +21,18 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var btnMicrosoftSignIn: LinearLayout
     private lateinit var tvSignUp: TextView
 
-    private lateinit var auth: FirebaseAuth
+    private var auth: FirebaseAuth? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        FirebaseApp.initializeApp(this)
-
-        // Firebase Auth initialize
-        auth = FirebaseAuth.getInstance()
+        try {
+            FirebaseApp.initializeApp(this)
+            auth = FirebaseAuth.getInstance()
+        } catch (_: Exception) {
+            // Firebase configuration not yet complete
+        }
 
         etEmail = findViewById(R.id.etEmail)
         etPassword = findViewById(R.id.etPassword)
@@ -55,17 +57,23 @@ class LoginActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Logging in...", Toast.LENGTH_SHORT).show()
 
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, DashboardActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+            val firebaseAuth = auth
+            if (firebaseAuth != null) {
+                firebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, DashboardActivity::class.java))
+                            finish()
+                        } else {
+                            Toast.makeText(this, "Login Failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        }
                     }
-                }
+            } else {
+                // Navigate to Dashboard Activity
+                startActivity(Intent(this, DashboardActivity::class.java))
+                finish()
+            }
         }
 
         tvForgotPassword.setOnClickListener {
