@@ -49,11 +49,11 @@
     <string name="class_4">Classes 4</string>
     <string name="title_payments">Payments</string>
     <string name="paid_label">Paid</string>
-    <string name="paid_amount">$65.00</string>
+    <string name="paid_amount">Rs. 6,500</string>
     <string name="pending_label">Pending</string>
-    <string name="pending_amount">$55.00</string>
+    <string name="pending_amount">Rs. 5,500</string>
     <string name="overdue_label">Overdue</string>
-    <string name="overdue_amount">$22.00</string>
+    <string name="overdue_amount">Rs. 2,200</string>
     <string name="pay_online">Pay Online</string>
     <string name="pay_online_subtitle">Instant online payment integrating PayHere.</string>
     <string name="upload_receipt">Upload Receipt</string>

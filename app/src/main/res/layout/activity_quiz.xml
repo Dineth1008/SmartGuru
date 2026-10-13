@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F4F8">
+    android:background="#F8FAFC"
+    tools:context=".QuizActivity">
 
     <!-- Top Dark Blue Header -->
     <RelativeLayout
         android:id="@+id/headerLayout"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="#153460"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="30dp">
+        android:layout_height="70dp"
+        android:background="@color/smart_blue"
+        android:paddingHorizontal="20dp">
 
         <ImageView
             android:id="@+id/btnBack"
@@ -20,42 +21,36 @@
             android:layout_height="24dp"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_menu_revert"
-            app:tint="#FFFFFF" />
+            android:clickable="true"
+            android:contentDescription="Back"
+            android:focusable="true"
+            android:src="@drawable/ic_back_arrow" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Online MCQ"
+            android:text="Online MCQ Quiz"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:src="@android:drawable/ic_menu_agenda"
-            app:tint="#FFFFFF" />
     </RelativeLayout>
 
-    <!-- Bottom Fixed Button -->
-    <com.google.android.material.button.MaterialButton
+    <!-- Bottom View Result Button -->
+    <Button
         android:id="@+id/btnViewResult"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="52dp"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="View Result"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/smart_blue"
+        android:text="Submit &amp; View Result"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:backgroundTint="#153460"
-        app:cornerRadius="12dp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <!-- Scrollable Content Area -->
     <ScrollView
@@ -71,60 +66,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Quiz List Dropdown 1 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="12dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableStart="@android:drawable/ic_menu_search"
-                    android:drawableEnd="@android:drawable/arrow_down_float"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="16dp"
-                    android:text="Quiz List"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
-
-            <!-- Quiz List Dropdown 2 -->
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:drawableStart="@android:drawable/ic_menu_search"
-                    android:drawableEnd="@android:drawable/arrow_down_float"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:paddingHorizontal="16dp"
-                    android:text="Quiz List"
-                    android:textColor="#333333"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-            </androidx.cardview.widget.CardView>
-
             <!-- Main MCQ Question Card -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="20dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -136,26 +85,23 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp">
+                        android:layout_marginBottom="12dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:drawableStart="@android:drawable/ic_menu_info_details"
-                            android:drawablePadding="8dp"
-                            android:text="MCQ"
-                            android:textColor="#1A1A1A"
-                            android:textSize="18sp"
+                            android:layout_alignParentStart="true"
+                            android:text="MCQ Quiz #1"
+                            android:textColor="@color/smart_blue"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:text="Tener"
-                            android:textColor="#7A7A7A"
+                            android:text="Timer: 10:00"
+                            android:textColor="#667085"
                             android:textSize="14sp" />
                     </RelativeLayout>
 
@@ -165,91 +111,99 @@
                         android:layout_height="3dp"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="16dp"
-                        android:background="#2196F3" />
+                        android:background="@color/smart_blue" />
 
                     <!-- Question Text -->
                     <TextView
+                        android:id="@+id/tvQuestionTitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="What is ax MEC Questions?"
-                        android:textColor="#1A1A1A"
-                        android:textSize="20sp"
+                        android:text="Q1: Which of the following is an active learning method in SmartGuru?"
+                        android:textColor="#101828"
+                        android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:layout_marginBottom="16dp"
-                        android:text="What are you quest active questions?"
-                        android:textColor="#4A4A4A"
-                        android:textSize="14sp" />
+                        android:layout_marginBottom="20dp"
+                        android:text="Select the most appropriate answer below:"
+                        android:textColor="#667085"
+                        android:textSize="13sp" />
 
                     <!-- Options -->
                     <!-- Option 1 -->
                     <TextView
+                        android:id="@+id/option1"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginBottom="10dp"
-                        android:background="#F5F6FA"
-                        android:drawableStart="@android:drawable/checkbox_off_background"
-                        android:drawablePadding="12dp"
+                        android:background="@drawable/bg_role_unselected"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="16dp"
-                        android:text="Option 1"
-                        android:textColor="#333333"
-                        android:textSize="16sp" />
+                        android:text="A) Interactive MCQ Practice"
+                        android:textColor="#344054"
+                        android:textSize="15sp" />
 
                     <!-- Option 2 -->
                     <TextView
+                        android:id="@+id/option2"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginBottom="10dp"
-                        android:background="#F5F6FA"
-                        android:drawableStart="@android:drawable/checkbox_off_background"
-                        android:drawablePadding="12dp"
+                        android:background="@drawable/bg_role_unselected"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="16dp"
-                        android:text="Option 2"
-                        android:textColor="#333333"
-                        android:textSize="16sp" />
+                        android:text="B) Passive Reading"
+                        android:textColor="#344054"
+                        android:textSize="15sp" />
 
                     <!-- Option 3 -->
                     <TextView
+                        android:id="@+id/option3"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginBottom="10dp"
-                        android:background="#F5F6FA"
-                        android:drawableStart="@android:drawable/checkbox_off_background"
-                        android:drawablePadding="12dp"
+                        android:background="@drawable/bg_role_unselected"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="16dp"
-                        android:text="Option 3"
-                        android:textColor="#333333"
-                        android:textSize="16sp" />
+                        android:text="C) Ignoring Assignment Deadlines"
+                        android:textColor="#344054"
+                        android:textSize="15sp" />
 
                     <!-- Option 4 -->
                     <TextView
+                        android:id="@+id/option4"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:background="#F5F6FA"
-                        android:drawableStart="@android:drawable/checkbox_off_background"
-                        android:drawablePadding="12dp"
+                        android:background="@drawable/bg_role_unselected"
+                        android:clickable="true"
+                        android:focusable="true"
                         android:gravity="center_vertical"
                         android:paddingHorizontal="16dp"
-                        android:text="Option!"
-                        android:textColor="#333333"
-                        android:textSize="16sp" />
+                        android:text="D) None of the above"
+                        android:textColor="#344054"
+                        android:textSize="15sp" />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <!-- Final Result Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardResult"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="16dp"
-                app:cardElevation="4dp">
+                app:cardElevation="2dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -265,40 +219,30 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Final Result"
-                            android:textColor="#1A1A1A"
+                            android:text="Final Result Score"
+                            android:textColor="#101828"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/tvScore"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
-                            android:text="90"
-                            android:textColor="#1A1A1A"
+                            android:text="100 / 100"
+                            android:textColor="@color/guru_orange"
                             android:textSize="18sp"
                             android:textStyle="bold" />
                     </RelativeLayout>
 
-                    <RelativeLayout
+                    <TextView
+                        android:id="@+id/tvResultMessage"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:text="Congratulations! You answered correctly."
+                        android:textColor="#12B76A"
+                        android:textSize="14sp" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Final Result"
-                            android:textColor="#4A4A4A"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:text="30"
-                            android:textColor="#4A4A4A"
-                            android:textSize="16sp" />
-                    </RelativeLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
